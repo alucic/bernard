@@ -16,7 +16,6 @@ class Consumer
     protected $dispatcher;
     protected $shutdown = false;
     protected $pause = false;
-    protected $configured = false;
     protected $options = [
         'max-runtime' => PHP_INT_MAX,
         'max-messages' => null,
@@ -62,7 +61,9 @@ class Consumer
      */
     public function tick(Queue $queue, array $options = [])
     {
-        $this->configure($options);
+        $this->options = array_filter($options) + $this->options;
+
+        $this->options['max-runtime'] += microtime(true);
 
         if ($this->shutdown) {
             return false;
@@ -142,20 +143,6 @@ class Consumer
         } catch (\Exception $exception) {
             $this->rejectDispatch($exception, $envelope, $queue);
         }
-    }
-
-    /**
-     * @param array $options
-     */
-    protected function configure(array $options)
-    {
-        if ($this->configured) {
-            return $this->options;
-        }
-
-        $this->options = array_filter($options) + $this->options;
-        $this->options['max-runtime'] += microtime(true);
-        $this->configured = true;
     }
 
     /**
