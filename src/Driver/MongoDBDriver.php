@@ -2,6 +2,7 @@
 
 namespace Bernard\Driver;
 
+use Bernard\Driver;
 use MongoCollection;
 use MongoDate;
 use MongoId;
@@ -11,7 +12,7 @@ use MongoId;
  *
  * @package Bernard
  */
-class MongoDBDriver implements \Bernard\Driver
+class MongoDBDriver implements Driver
 {
     private $messages;
     private $queues;

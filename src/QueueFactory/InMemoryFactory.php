@@ -3,6 +3,7 @@
 namespace Bernard\QueueFactory;
 
 use Bernard\Queue\InMemoryQueue;
+use Bernard\QueueFactory;
 
 /**
  * This is an in memory queue factory. It creates SplQueue objects for the
@@ -10,7 +11,7 @@ use Bernard\Queue\InMemoryQueue;
  *
  * @package Bernard
  */
-class InMemoryFactory implements \Bernard\QueueFactory
+class InMemoryFactory implements QueueFactory
 {
     protected $queues;
 

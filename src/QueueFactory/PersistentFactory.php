@@ -4,6 +4,7 @@ namespace Bernard\QueueFactory;
 
 use Bernard\Driver;
 use Bernard\Queue\PersistentQueue;
+use Bernard\QueueFactory;
 use Bernard\Serializer;
 
 /**
@@ -12,7 +13,7 @@ use Bernard\Serializer;
  *
  * @package Bernard
  */
-class PersistentFactory implements \Bernard\QueueFactory
+class PersistentFactory implements QueueFactory
 {
     protected $queues;
     protected $driver;

@@ -4,11 +4,12 @@ namespace Bernard\Queue;
 
 use Bernard\Envelope;
 use Bernard\Exception\InvalidOperationException;
+use Bernard\Queue;
 
 /**
  * @package Bernard
  */
-abstract class AbstractQueue implements \Bernard\Queue
+abstract class AbstractQueue implements Queue
 {
     protected $closed;
     protected $name;

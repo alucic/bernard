@@ -2,6 +2,7 @@
 
 namespace Bernard\Driver;
 
+use Bernard\Driver;
 use Pheanstalk\PheanstalkInterface;
 
 /**
@@ -9,7 +10,7 @@ use Pheanstalk\PheanstalkInterface;
  *
  * @package Bernard
  */
-class PheanstalkDriver implements \Bernard\Driver
+class PheanstalkDriver implements Driver
 {
     protected $pheanstalk;
 

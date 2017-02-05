@@ -4,13 +4,14 @@ namespace Bernard\Router;
 
 use Bernard\Envelope;
 use Bernard\Exception\ReceiverNotFoundException;
+use Bernard\Router;
 
 /**
  * Routes a Envelope to a Receiver by using the name of the Envelope.
  *
  * @package Bernard
  */
-class SimpleRouter implements \Bernard\Router
+class SimpleRouter implements Router
 {
     protected $receivers = [];
 
